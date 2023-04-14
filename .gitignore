@@ -11,6 +11,9 @@
 # production
 /build
 
+#build zip
+/upload.zip
+
 # misc
 .DS_Store
 .env
