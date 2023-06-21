@@ -19,6 +19,7 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-tsparticles": "^1.42.2",
+    "serve": "^14.2.0",
     "tabler": "^1.0.0-alpha.8",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.4"
