@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
-
+import ResumePDF from "../../Assets/ankurgajurel-resume.pdf"
 
 function ResumeNew() {
   return (
@@ -13,7 +13,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={"https://drive.google.com/file/d/1z55Huhx0M2HgPPFlLK9VCN7ZUF1KwtAf/view?usp=sharing"}
+            href={ResumePDF}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
