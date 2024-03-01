@@ -7,7 +7,7 @@ export const EDUCATION: TShowCaseListDetatils[] = [
       name: "Nobel Academy",
       href: "https://nobel.edu.np/",
     },
-    date: "2021-2023",
+    
     location: "New Baneshwor, Kathmandu",
     description:
     // write description i completed this course in 2023 april
@@ -19,7 +19,6 @@ export const EDUCATION: TShowCaseListDetatils[] = [
       name: "Occidental Public School",
       href: "https://www.ops.edu.np/",
     },
-    date: "2009-2021",
     location: "Anamnagar, Kathmandu",
     description:
       "Completed SEE with 3.65 GPA.",
