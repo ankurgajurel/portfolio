@@ -47,7 +47,7 @@ export type TShowCaseListDetatils = {
     name: string;
     href: string;
   };
-  date: string;
+  date?: string;
   location: string;
   description: string;
 };
@@ -75,9 +75,12 @@ export function ShowCaseListDetatils(props: TShowCaseListDetatils) {
             @{props.organisation.name}
           </Link>
         </h3>
-        <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400 xs:text-base">
+        {
+          props.date && <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400 xs:text-base">
           {props.date} | {props.location}
         </span>
+        }
+        
         <p className="text-sm font-medium xs:text-base">{props.description}</p>
       </motion.div>
     </li>
