@@ -117,7 +117,7 @@ export default function Navbar(props: TNavbar) {
                   ))}
                   <ThemeSwitch setClose={setIsModalOpen} />
                 </div>
-                <div className="absolute bottom-0 py-6">©2023 Ankur Gajurel</div>
+                <div className="absolute bottom-0 py-6">Ankur Gajurel</div>
               </Dialog.Panel>
             </Transition.Child>
           </div>

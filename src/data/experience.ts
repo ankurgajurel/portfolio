@@ -2,14 +2,18 @@ import { TShowCaseListDetatils } from "@/components/ShowCaseList";
 
 export const EXPERIENCE: TShowCaseListDetatils[] = [
   {
-    title: "Full Stack Developer",
+    title: "Backend DevOps Developer",
     organisation: {
       name: "A5IT Capital",
       href: "https://a5it.com/",
     },
     location: "Remote",
-    description:
-      "Helping refactor code written in ExpressJS and NextJS to use TypeScript. Building a CI/CD pipeline for the company's main product using Github Actions and AWS CodePipeline. Explored docker deployment and maintainance",
+    description: `
+      - Deploy and build CI pipelines for Express, Postgres and NextJS apps. <br />
+      - Develop and maintain backend services using Node.js and TypeScript.<br />
+      - Design and implement RESTful APIs with the Express.js framework.<br />
+      - Utilize Docker for containerization / deployment. and setup CI/CD pipelines
+    `,
   },
   {
     title: "Cloud / Developer",
@@ -18,8 +22,13 @@ export const EXPERIENCE: TShowCaseListDetatils[] = [
       href: "https://hyperce.io/",
     },
     location: "Remote",
-    description:
-      "Helping build and deploy Vendure based eCommerce application with Vendure, NextJS, Postgres and AWS (EC2, ECR, ECS, AppRunner, S3, SES). \n\n Built the new website for the company with NextJS, Tailwind, Framer.",
+    description: `
+      - Orchestrated AWS deployments on ECS, AppRunner, and EC2 platforms. <br />
+      - Managed SES, S3, CloudFront, Route 53 and more AWS services for efficient solutions.<br />
+      - Spearheaded CI/CD pipeline development for streamlined software delivery.<br />
+      - Single handedly developed main company website using Next.js for optimal performance.<br />
+      - Aided junior DevOps professional in a smooth transition and knowledge transfer.
+      `,
   },
   {
     title: "Cloud Intern",
@@ -28,8 +37,10 @@ export const EXPERIENCE: TShowCaseListDetatils[] = [
       href: "https://hyperce.io/",
     },
     location: "Remote",
-    description:
-      "Built CI/CD Pipeline for a Node/Express/Typescript based API using Github Actions and deployed it to AWS EC2. Deployed a NextJS and a Vendure application on EC2.",
+    description: `
+      - Deployed Node/Express/Typescript based API on EC2 and AppRunner. <br />
+      - CI/CD with Github Actions.
+    `,
   },
   {
     title: "Frontend Developer",
@@ -38,7 +49,11 @@ export const EXPERIENCE: TShowCaseListDetatils[] = [
       href: "https://nestnepal.com/",
     },
     location: "Hybrid - Pepsicola, Kathmandu",
-    description:
-      "Redesigned most components with Tailwind CSS and AstroJS. Built a CI/CD pipeline for the website using Github Actions - FTP Action.",
+    description: `
+      - Redesigned most components with Tailwind CSS and AstroJS. <br />
+      - Built a CI/CD pipeline for the website using Github Actions - FTP Action.
+    `,
+    // description:
+    //   "Redesigned most components with Tailwind CSS and AstroJS. Built a CI/CD pipeline for the website using Github Actions - FTP Action.",
   },
 ];

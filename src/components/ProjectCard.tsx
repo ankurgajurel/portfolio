@@ -24,8 +24,12 @@ export default function ProjectCard(props: ProjectCardProps) {
       }}
       className="w-full overflow-hidden rounded-lg border border-zinc-500/30 bg-white transition-shadow duration-150 hover:shadow-md dark:border-teal-200/10 dark:bg-zinc-800 dark:hover:shadow-sm dark:hover:shadow-teal-200/50"
     >
-      <div className="h-full overflow-clip max-h-[400px] w-full object-center">
-        <img className="overflow-clip object-center" src={props.imageUrl[0]} alt="" />
+      <div className="overflow-clip w-full object-center">
+        <img
+          className="overflow-clip object-center h-[200px] w-full sm:h-[250px] md:h-[300px] object-cover"
+          src={props.imageUrl[0]}
+          alt=""
+        />
       </div>
       <div className="p-3 sm:p-4">
         <div className="flex items-center gap-3">

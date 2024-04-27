@@ -55,7 +55,7 @@ export type TShowCaseListDetatils = {
 export function ShowCaseListDetatils(props: TShowCaseListDetatils) {
   const ref = useRef(null);
   return (
-    <li ref={ref} className="mx-auto mb-14 flex w-[60%] flex-col gap-1">
+    <li ref={ref} className="mx-auto mb-14 flex w-3/4 flex-col gap-1">
       <ShowCaseLiIcon iconRef={ref} />
       <motion.div
         initial={{ y: 50 }}
@@ -75,13 +75,18 @@ export function ShowCaseListDetatils(props: TShowCaseListDetatils) {
             @{props.organisation.name}
           </Link>
         </h3>
-        {
-          props.date && <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400 xs:text-base">
-          {props.date} | {props.location}
-        </span>
-        }
-        
-        <p className="text-sm font-medium xs:text-base">{props.description}</p>
+        {props.date && (
+          <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400 xs:text-base">
+            {props.date} | {props.location}
+          </span>
+        )}
+
+        <p
+          className="text-sm font-medium xs:text-base"
+          dangerouslySetInnerHTML={{
+            __html: props.description,
+          }}
+        />
       </motion.div>
     </li>
   );

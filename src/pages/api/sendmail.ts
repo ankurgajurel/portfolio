@@ -44,19 +44,19 @@ const limiter = rateLimiterApi({
               "Set-Cookie",
               `userUuid=${newUuidToken}; Max-Age=${
                 60 * 60 * 24
-              }; SameSite=Strict`,
+              }; SameSite=Strict`
             );
 
             // Set a new expiration date (e.g., 24 hours from now)
             const newExpirationDate = new Date();
             newExpirationDate.setSeconds(
-              newExpirationDate.getSeconds() + 60 * 60 * 24,
+              newExpirationDate.getSeconds() + 60 * 60 * 24
             );
             res.setHeader(
               "Set-Cookie",
               `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${
                 60 * 60 * 24
-              }; SameSite=Strict`,
+              }; SameSite=Strict`
             );
 
             return newUuidToken;
@@ -66,34 +66,34 @@ const limiter = rateLimiterApi({
         userUuidToken = v4();
         res.setHeader(
           "Set-Cookie",
-          `userUuid=${userUuidToken}; Max-Age=${60 * 60 * 24}; SameSite=Strict`,
+          `userUuid=${userUuidToken}; Max-Age=${60 * 60 * 24}; SameSite=Strict`
         );
         const newExpirationDate = new Date();
         newExpirationDate.setSeconds(
-          newExpirationDate.getSeconds() + 60 * 60 * 24,
+          newExpirationDate.getSeconds() + 60 * 60 * 24
         );
         res.setHeader(
           "Set-Cookie",
           `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${
             60 * 60 * 24
-          }; SameSite=Strict`,
+          }; SameSite=Strict`
         );
         return userUuidToken;
       } else {
         userUuidToken = v4();
         res.setHeader(
           "Set-Cookie",
-          `userUuid=${userUuidToken}; Max-Age=${60 * 60 * 24}; SameSite=Strict`,
+          `userUuid=${userUuidToken}; Max-Age=${60 * 60 * 24}; SameSite=Strict`
         );
         const newExpirationDate = new Date();
         newExpirationDate.setSeconds(
-          newExpirationDate.getSeconds() + 60 * 60 * 24,
+          newExpirationDate.getSeconds() + 60 * 60 * 24
         );
         res.setHeader(
           "Set-Cookie",
           `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${
             60 * 60 * 24
-          }; SameSite=Strict`,
+          }; SameSite=Strict`
         );
         return userUuidToken;
       }
@@ -106,15 +106,13 @@ const limiter = rateLimiterApi({
 type MailRequestBody = {
   name: string;
   email: string;
-  subject: string;
   message: string;
 };
 
 const sendMail = async function (
   name: string,
   email: string | "SELF",
-  subject: string,
-  message: string,
+  message: string
 ): Promise<{ status: number; message: string }> {
   const transporter = createTransport({
     service: "gmail",
@@ -127,8 +125,8 @@ const sendMail = async function (
   const mailOptions = {
     from: process.env.NODEMAILER_USER,
     to: process.env.NODEMAILER_USER,
-    subject: "Portfolio: [" + subject + " ]",
-    text: `${name}: <${email}>\n${message}`,
+    subject: "Message from Portfolio by " + name,
+    text: `From: ${name}: <${email}>\n\n\n${message}`,
   };
 
   return new Promise((resolve) => {
@@ -144,7 +142,7 @@ const sendMail = async function (
 
 const handler = async (
   req: NextApiRequest,
-  res: NextApiResponse<{ status: number; message: string }>,
+  res: NextApiResponse<{ status: number; message: string }>
 ) => {
   try {
     const { method } = req;
@@ -153,7 +151,7 @@ const handler = async (
     const isRateLimited = await limiter.check(res, req, REQUEST_PER_HOUR);
     if (isRateLimited.status !== 200) return;
 
-    if (!data.name || !data.email || !data.subject || !data.message) {
+    if (!data.name || !data.email || !data.message) {
       // Validate json body
       res.status(400).json({
         status: 400,
@@ -162,7 +160,7 @@ const handler = async (
       return;
     }
 
-    const { name, email, subject, message } = data;
+    const { name, email, message } = data;
 
     // Verify email
     // !!!IMPORTANT: This verification strategy is not standard it can reject some valid email address
@@ -176,7 +174,7 @@ const handler = async (
 
     switch (method) {
       case "POST": {
-        const data = await sendMail(name, email, subject, message);
+        const data = await sendMail(name, email, message);
         res.status(200).send(data);
         break;
       }

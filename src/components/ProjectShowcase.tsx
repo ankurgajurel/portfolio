@@ -50,7 +50,11 @@ export default function ProjectShowcase(props: TProjectShowcase) {
               className="absolute right-0 top-0 -z-50"
             >
               <Image
-                src={images[currentImage].LIGHT}
+                src={
+                  images[currentImage].DARK !== undefined
+                    ? images[currentImage].DARK!
+                    : images[currentImage].LIGHT
+                }
                 unoptimized
                 width={100}
                 height={100}

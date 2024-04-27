@@ -21,7 +21,7 @@ export default function Footer() {
         <ContactForm />
       </div>
       <div className="flex w-full flex-col items-center justify-between gap-8 text-center  md:flex-row md:justify-between lg:mx-auto lg:max-w-7xl">
-        <span>©2023 Ankur Gajurel</span>
+        <span>Ankur Gajurel</span>
         <div className="flex gap-8">
           <a
             href="https://github.com/ankurgajurel"

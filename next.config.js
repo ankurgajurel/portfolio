@@ -1,30 +1,48 @@
-// const withBundleAnalyzer = require("@next/bundle-analyzer")({
-//   enabled: process.env.ANALYZE === "true",
-// });
-
-/** @type {import('next').NextConfig} */
-// const nextConfig = withBundleAnalyzer({
-//   reactStrictMode: true,
-//   pageExtensions: ["ts", "tsx", "js"],
-//   eslint: {
-//     dirs: ["src"],
-//   },
-//   images: {
-//     domains: ["https://flagcdn.com"],
-//   },
-//   webpack: (config) => {
-//     config.resolve.fallback = {
-//       fs: false,
-//       net: false,
-//       dns: false,
-//       child_process: false,
-//       tls: false,
-//     };
-
-//     return config;
-//   },
-// });
-
-const nextConfig = {}
-
-module.exports = nextConfig;
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'opengraph.githubassets.com',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.hyperce.io',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'garuda-agency.vercel.app',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'saruarchives.com',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'utarchadhav.com',
+        port: '',
+        pathname: '**',
+      }
+    ],
+  },
+}
