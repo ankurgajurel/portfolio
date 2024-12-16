@@ -33,7 +33,7 @@ export default function ProjectShowcase(props: TProjectShowcase) {
         <div className="relative right-0 top-0 hidden lg:block">
           <AnimatePresence>
             <motion.div
-              key={props.projects[currentImage].title}
+              key={props.projects[currentImage]?.title}
               initial={{ x: "100%", opacity: 0 }}
               animate={{
                 x: "55%",
@@ -51,9 +51,9 @@ export default function ProjectShowcase(props: TProjectShowcase) {
             >
               <Image
                 src={
-                  images[currentImage].DARK !== undefined
+                  images[currentImage]?.DARK !== undefined
                     ? images[currentImage].DARK!
-                    : images[currentImage].LIGHT
+                    : images[currentImage]?.LIGHT
                 }
                 unoptimized
                 width={100}
@@ -61,9 +61,9 @@ export default function ProjectShowcase(props: TProjectShowcase) {
                 className="h-auto w-1/2 rounded-lg border border-zinc-300 shadow-lg dark:hidden dark:border-teal-400/50"
                 alt={`project ${currentImage}`}
               />
-              {images[currentImage].DARK !== undefined && (
+              {images[currentImage]?.DARK !== undefined && (
                 <Image
-                  src={images[currentImage].DARK!}
+                  src={images[currentImage]?.DARK!}
                   unoptimized
                   width={100}
                   height={100}

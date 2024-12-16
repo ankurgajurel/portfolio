@@ -3,6 +3,18 @@ import { ProjectShowcaseListProps } from "@/components/ProjectShowcaseList";
 
 export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
   {
+    index: 0,
+    title: "Youtube Quiz Generator App",
+    href: "https://github.com/ankurgajurel/youtube-quiz-generator",
+    tags: ["Python", "OpenAI", "CLI", "REST APIs", "NextJS"],
+    image: {
+      LIGHT:
+        "https://opengraph.githubassets.com/671311041a3fc895c7e39c0263ef6a9593d12f4a9c93e7db4b6da9b508494521/ankurgajurel/youtube-chat",
+      DARK:
+        "https://opengraph.githubassets.com/671311041a3fc895c7e39c0263ef6a9593d12f4a9c93e7db4b6da9b508494521/ankurgajurel/youtube-chat",
+    },
+  },
+  {
     index: 1,
     title: "URL Shortener",
     href: "https://github.com/ankurgajurel/url-shortener",
@@ -56,6 +68,14 @@ export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
 ];
 
 export const PROJECTS_CARD: ProjectCardProps[] = [
+  {
+    name: "Youtube Quiz Generator App",
+    description: "A fullstack app that geneartes quiz questions for a vtt file or a youtube video",
+    sourceCodeHref: "https://github.com/ankurgajurel/youtube-quiz-generator",
+    imageUrl: ["https://opengraph.githubassets.com/c800106a9dffd8151a3fb383bc81b85550b0d5af229f723a78c7090fc685840f/ankurgajurel/youtube-quiz-generator"],
+    favicon: "/images/projects/logos/jsontree.ico",
+  },
+
   {
     name: "Youtube Chat",
     favicon: "/images/projects/logos/jsontree.ico",

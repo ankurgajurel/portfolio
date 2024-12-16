@@ -49,7 +49,7 @@ export default function ProjectShowcaseList(props: ProjectList) {
                 : "text-teal-600/30 dark:text-teal-600/50",
             )}
           >
-            {props.data.title}
+            {props.data?.title}
           </span>
           <span className="hover:-underline-offset-1 text-3xl font-semibold text-teal-600 transition-colors duration-300 hover:underline dark:text-teal-400 sm:text-4xl md:text-5xl lg:hidden">
             {props.data.title}
